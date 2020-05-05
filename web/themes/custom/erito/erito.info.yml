@@ -1,0 +1,42 @@
+name: erito
+description: A theme based on Radix.
+screenshot: screenshot.png
+core: 8.x
+# version: VERSION
+engine: twig
+type: theme
+base theme: radix
+
+regions:
+  navbar_sup_left: Navbar superior left
+  navbar_sup_right: Navbar superior right
+  navbar_branding: Navbar branding
+  navbar_left:  Navbar left
+  navbar_right: Navbar right
+  header: Header
+  content: Content
+  page_bottom: Page bottom
+  footer: Footer
+  subfooter_left : Left under footer
+  subfooter_right : Right under footer
+
+
+libraries:
+  - radix/style
+  - erito/style
+
+libraries-override:
+  radix/bootstrap: false
+
+ckeditor_stylesheets:
+  - assets/css/erito.style.css
+
+component-libraries:
+  erito:
+    paths:
+      - ./src/components
+
+# Information added by Drupal.org packaging script on 2020-03-17
+version: '8.x-4.8'
+project: 'radix'
+datestamp: 1584430760

@@ -1,0 +1,13 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/erito.style.css: {}
+  js:
+    assets/js/erito.script.js: {}
+    assets/js/jquery.js: {}
+    assets/js/init.js: {}
+    assets/js/plugins.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

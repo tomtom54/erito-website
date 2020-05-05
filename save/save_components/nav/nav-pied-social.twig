@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Template for a Nav component.
+ *
+ * Available config:
+ * - alignment: left | right | center | vertical.
+ * - style: tabs | pills
+ * - fill: fill | justify
+ * - utility_classes: An array of utility classes.
+ */
+#}
+  {% if items %}
+    <ul class="list-inline social-links wow pull-left">
+    {% for item in items %}
+      <li{{ item.attributes }}>
+        {% if item.title=="facebook" %}
+          <a href={{ item.url }}><i class='fa fa-facebook' ></i></a>
+        {% elseif item.title=="instagram" %}
+          <a href={{ item.url }}><i class='fa fa-instagram' ></i></a>
+        {% elseif item.title=="youtube" %}
+          <a href={{ item.url }}><i class='fa fa-youtube' ></i></a>
+        {% elseif item.title=="twitter" %}
+          <a href={{ item.url }}><i class='fa fa-twitter' ></i></a>
+        {% else %}
+          {{ link(item.title, item.url) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}

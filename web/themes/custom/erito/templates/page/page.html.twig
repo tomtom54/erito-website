@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+<div id="page-top" class="index"> {#class="page">#}
+  <div class="master-wrapper">
+        <div class="preloader">
+            <div class="preloader-img">
+                <span class="loading-animation animate-flicker"><img src="/themes/custom/erito/img/loading.GIF" alt="loading"/></span>
+            </div>
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top fadeInDown" data-wow-delay="0.5s">
+            <div class="top-bar smoothie hidden-xs">
+                <div class="container">
+                    <div class="clearfix">
+                         {% block social_top %}
+                            {% if page.navbar_sup_left %}
+                                {{ page.navbar_sup_left }}
+                            {% endif %}
+                        {% endblock %}
+
+                        <div class="pull-right text-right">
+                            <ul class="list-inline">
+                                <li>
+                                    <div><i class="fa fa-envelope-o"></i> email@domain.com</div>
+                                </li>
+                                <li>
+                                    <div class="meta-item"><i class="fa fa-mobile"></i> +44 8780 648 605</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    {% embed '@erito/navbar/navbar.twig' with {
+        container: 'fixed',
+    } %}
+
+
+    {% block branding %}
+      {% if page.navbar_branding %}
+        {{ page.navbar_branding }}
+      {% endif %}
+    {% endblock %}
+
+    {% block left %}
+      {% if page.navbar_left %}
+          {{ page.navbar_left }}
+      {% endif %}
+    {% endblock %}
+
+    {% block right %}
+      {% if page.navbar_right %}
+        {{ page.navbar_right }}
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
+  </nav>
+
+<!-- Header -->
+<header id="headerwrap" class="dark-wrapper backstretched special-max-height no-overlay">
+    <div class="container vertical-center">
+        <div class="intro-text vertical-center text-left smoothie">
+            <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">Erito 91</div>
+            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">Alliance de <span class="rotate">Judo-Club Crosnois, AS Corbeil-Essonnes & Etiolles, Judo-Club Epinay-sous-Sénart, Judo-Club Montgeron</span></div>
+        </div>
+    </div>
+</header>
+
+  <main class="pt-5 pb-5">
+    {% if page.header %}
+      <header class="page__header mb-3">
+        <div class="container">
+          {{ page.header }}
+        </div>
+      </header>
+    {% endif %}
+
+    {% if page.content %}
+      <div class="page__content">
+        <div class="container">
+          {{ page.content }}
+        </div>
+      </div>
+    {% endif %}
+  </main>
+
+        <div id="footer-wrapper" class="footer-image-bg">
+            <section class="transparent-wrapper">
+                <div class="section-inner">
+                    <div class="container">
+                        <div class="row">
+                              {% if page.footer %}
+                                {{ page.footer }}
+                              {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <footer class="white-wrapper">
+                <div class="container">
+                    <div class="row">
+                      {% embed '@radix/block/subfooter.twig' %}
+                          {% block subfoot_left %}
+                            {% if page.subfooter_left %}
+                                {{ page.subfooter_left }}
+                            {% endif %}
+                          {% endblock %}
+
+                          {% block subfoot_right %}
+                            {% if page.subfooter_right %}
+                                {{ page.subfooter_right }}
+                            {% endif %}
+                          {% endblock %}
+                      {% endembed %}
+                    </div>
+                </div>
+            </footer>
+        </div>
+  </div> 
+</div>
